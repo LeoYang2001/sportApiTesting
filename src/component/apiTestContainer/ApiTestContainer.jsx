@@ -135,7 +135,10 @@ const ApiTestContainer = () => {
     
   return (
     <>
-    <div>
+    <div className='flex justify-between px-24 items-center'>
+        <div className=' border rounded-md p-2 inputBox'>
+            <a href="https://dashboard.api-football.com/basketball/ids" target={'_blank'}>Team ids</a>
+        </div>
             <select className=' border rounded-md p-2' value={selectedOption} onChange={handleSelectChange}>
                 <option value="">select api use cases</option>
                 <option value="gameId">fetch game</option>
@@ -143,7 +146,11 @@ const ApiTestContainer = () => {
                 <option value="teamId&season">fetch a team from certain season</option>
                 <option value="leagueId&season&date">fetch games from certain date</option>
             </select>
+            <div  className=' border rounded-md p-2 inputBox'>
+            <a href="https://dashboard.api-football.com/basketball/ids" target={'_blank'}>League ids</a>
         </div>
+    </div>
+        
     <div className=' w-full gap-4 px-20 py-4 flex flex-wrap justify-between m-2'>
             <FilterBox ifDisable={filterList[0].isDisabled} key={filterList[0].label} label={filterList[0].label} filterId={gameId} setFilterId={setGameId} />
             <FilterBox ifDisable={filterList[1].isDisabled} key={filterList[1].label} label={filterList[1].label} filterId={leagueId} setFilterId={setLeagueId} />
